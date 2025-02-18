@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  dwh:
+    image: postgres:latest
+    container_name: pacbook-store-data-staging
+    restart: always
+    environment:
+      POSTGRES_DB: pacbook_staging
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5435:5432"
+    volumes:
+      - dwh_volume:/var/lib/postgresql/data
+      - ./helper:/docker-entrypoint-initdb.d
+
+volumes:
+  dwh_volume:
