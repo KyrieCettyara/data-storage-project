@@ -21,65 +21,62 @@ DIR_TEMP_DATA = os.getenv("DIR_TEMP_DATA")
 DIR_LOG = os.getenv("DIR_LOG")
 
 # Function to ensure a file exists with a specified header
-def ensure_file_exists_with_header(file_path, header=None):
-    if not os.path.exists(file_path):
-        with open(file_path, 'w') as f:
-            if header:
-                f.write(header)
+#def ensure_file_exists_with_header(file_path, header=None):
+#    if not os.path.exists(file_path):
+#        with open(file_path, 'w') as f:
+#            if header:
+#                f.write(header)
 
 
 
 # Ensure pipeline_summary.csv exists with header
-pipeline_summary_path = f'{DIR_ROOT_PROJECT}/pipeline_summary.csv'
-ensure_file_exists_with_header(pipeline_summary_path, 'timestamp,task,status,execution_time\n')
+#pipeline_summary_path = f'{DIR_ROOT_PROJECT}/pipeline_summary.csv'
+#ensure_file_exists_with_header(pipeline_summary_path, 'timestamp,task,status,execution_time\n')
 
 # Ensure temp extract, load, and transform summary exists with header
-for summary_file in ['extract-summary.csv', 'load-summary.csv', 'transform-summary.csv']:
-    file_path = f'{DIR_TEMP_DATA}/{summary_file}'
-    directory = os.path.dirname(file_path)
-    
-    # Check if directory exists, if not, create it
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    
-    # Ensure file exists with the specified header
-    ensure_file_exists_with_header(file_path, 'timestamp,task,status,execution_time\n')
+#for summary_file in ['extract-summary.csv', 'load-summary.csv', 'transform-summary.csv']:
+#    file_path = f'{DIR_TEMP_DATA}/{summary_file}'
+#    directory = os.path.dirname(file_path)
+#    
+#    # Check if directory exists, if not, create it
+#    if not os.path.exists(directory):
+#        os.makedirs(directory)
+#    
+#    # Ensure file exists with the specified header
+#    ensure_file_exists_with_header(file_path, 'timestamp,task,status,execution_time\n')
 
 # Ensure TEMP LOG exists
-if not os.path.exists(DIR_TEMP_LOG):
-    os.makedirs(DIR_TEMP_LOG)
-    with open(f'{DIR_TEMP_LOG}/logs.log', 'w') as f:
-        f.write('')
-
-# Ensure logs.log exists
-if not os.path.exists(DIR_LOG):
-    os.makedirs(DIR_LOG)
-    with open(f'{DIR_LOG}/logs.log', 'w') as f:
-        f.write('')
+#if not os.path.exists(DIR_TEMP_LOG):
+#    os.makedirs(DIR_TEMP_LOG)
+#    with open(f'{DIR_TEMP_LOG}/logs.log', 'w') as f:
+#        f.write('')
+#
+## Ensure logs.log exists
+#if not os.path.exists(DIR_LOG):
+#    os.makedirs(DIR_LOG)
+#    with open(f'{DIR_LOG}/logs.log', 'w') as f:
+#        f.write('')
     
 
 # Execute the functions when the script is run
 if __name__ == "__main__":
     # Build the task
-    luigi.build([
-                #Extract(),
+    luigi.build([Extract(),
                  Load()
-                # Transform()
-                ])
-    
+                 ])
 
     
-    # Concat temp extract summary to final summary
-    concat_dataframes(
-        df1 = pd.read_csv(pipeline_summary_path),
-        df2 = pd.read_csv(f'{DIR_TEMP_DATA}/extract-summary.csv')
-    )
-    
-    # Concat temp load summary to final summary
-    concat_dataframes(
-        df1 = pd.read_csv(pipeline_summary_path),
-        df2 = pd.read_csv(f'{DIR_TEMP_DATA}/load-summary.csv')
-    )
+    ## Concat temp extract summary to final summary
+    #concat_dataframes(
+    #    df1 = pd.read_csv(pipeline_summary_path),
+    #    df2 = pd.read_csv(f'{DIR_TEMP_DATA}/extract-summary.csv')
+    #)
+    #
+    ## Concat temp load summary to final summary
+    #concat_dataframes(
+    #    df1 = pd.read_csv(pipeline_summary_path),
+    #    df2 = pd.read_csv(f'{DIR_TEMP_DATA}/load-summary.csv')
+    #)
     
     # Concat temp transform summary to final summary
     #concat_dataframes(
@@ -87,22 +84,22 @@ if __name__ == "__main__":
     #    df2 = pd.read_csv(f'{DIR_TEMP_DATA}/transform-summary.csv')
     #)
     
-    # Ensure logs.log exists
-    logs_path = f'{DIR_LOG}/logs.log'
-    ensure_file_exists_with_header(logs_path)
+    ## Ensure logs.log exists
+    #logs_path = f'{DIR_LOG}/logs.log'
+    #ensure_file_exists_with_header(logs_path)
+    #
+    ## Append log from temp to final log
+    #copy_log(
+    #    source_file = f'{DIR_TEMP_LOG}/logs.log',
+    #    destination_file = logs_path
+    #)
     
-    # Append log from temp to final log
-    copy_log(
-        source_file = f'{DIR_TEMP_LOG}/logs.log',
-        destination_file = logs_path
-    )
-    
-    # Delete temp data
-    delete_temp(
-        directory = f'{DIR_TEMP_DATA}'
-    )
-    
-    # Delete temp log
-    delete_temp(
-        directory = f'{DIR_TEMP_LOG}'
-    )
+    ## Delete temp data
+    #delete_temp(
+    #    directory = f'{DIR_TEMP_DATA}'
+    #)
+    #
+    ## Delete temp log
+    #delete_temp(
+    #    directory = f'{DIR_TEMP_LOG}'
+    #)

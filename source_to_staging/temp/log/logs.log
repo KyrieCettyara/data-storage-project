@@ -1,0 +1,623 @@
+2025-02-19 23:57:04,703 - INFO - ==================================STARTING EXTRACT DATA=======================================
+2025-02-19 23:57:05,178 - INFO - EXTRACT 'address' - SUCCESS.
+2025-02-19 23:57:05,196 - INFO - EXTRACT 'address_status' - SUCCESS.
+2025-02-19 23:57:05,303 - INFO - EXTRACT 'author' - SUCCESS.
+2025-02-19 23:57:05,420 - INFO - EXTRACT 'book_author' - SUCCESS.
+2025-02-19 23:57:05,445 - INFO - EXTRACT 'book_language' - SUCCESS.
+2025-02-19 23:57:05,768 - INFO - EXTRACT 'book' - SUCCESS.
+2025-02-19 23:57:05,795 - INFO - EXTRACT 'country' - SUCCESS.
+2025-02-19 23:57:05,964 - INFO - EXTRACT 'cust_order' - SUCCESS.
+2025-02-19 23:57:06,011 - INFO - EXTRACT 'customer_address' - SUCCESS.
+2025-02-19 23:57:06,052 - INFO - EXTRACT 'customer' - SUCCESS.
+2025-02-19 23:57:06,439 - INFO - EXTRACT 'order_history' - SUCCESS.
+2025-02-19 23:57:06,579 - INFO - EXTRACT 'order_line' - SUCCESS.
+2025-02-19 23:57:06,595 - INFO - EXTRACT 'order_status' - SUCCESS.
+2025-02-19 23:57:06,630 - INFO - EXTRACT 'publisher' - SUCCESS.
+2025-02-19 23:57:06,650 - INFO - EXTRACT 'shipping_method' - SUCCESS.
+2025-02-19 23:57:06,651 - INFO - Extract All Tables From Sources - SUCCESS
+2025-02-19 23:57:06,665 - INFO - ==================================ENDING EXTRACT DATA=======================================
+2025-02-19 23:57:06,666 - INFO - [pid 10364] Worker Worker(salt=3862728406, workers=1, host=KyrieEl, username=kyrie, pid=10364) done      Extract()
+2025-02-19 23:57:06,668 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-02-19 23:57:06,674 - INFO - Informed scheduler that task   Extract__99914b932b   has status   DONE
+2025-02-19 23:57:06,675 - DEBUG - Asking scheduler for work...
+2025-02-19 23:57:06,679 - DEBUG - Pending tasks: 1
+2025-02-19 23:57:06,680 - INFO - [pid 10364] Worker Worker(salt=3862728406, workers=1, host=KyrieEl, username=kyrie, pid=10364) running   Load()
+2025-02-19 23:57:06,734 - INFO - ==================================STARTING TRUNCATE=======================================
+2025-02-19 23:57:06,808 - INFO - TRUNCATE address - SUCCESS
+2025-02-19 23:57:06,822 - INFO - TRUNCATE address_status - SUCCESS
+2025-02-19 23:57:06,834 - INFO - TRUNCATE author - SUCCESS
+2025-02-19 23:57:06,847 - INFO - TRUNCATE book_author - SUCCESS
+2025-02-19 23:57:06,860 - INFO - TRUNCATE book_language - SUCCESS
+2025-02-19 23:57:06,872 - INFO - TRUNCATE book - SUCCESS
+2025-02-19 23:57:06,882 - INFO - TRUNCATE country - SUCCESS
+2025-02-19 23:57:06,894 - INFO - TRUNCATE cust_order - SUCCESS
+2025-02-19 23:57:06,904 - INFO - TRUNCATE customer_address - SUCCESS
+2025-02-19 23:57:06,925 - INFO - TRUNCATE customer - SUCCESS
+2025-02-19 23:57:06,934 - INFO - TRUNCATE order_history - SUCCESS
+2025-02-19 23:57:06,945 - INFO - TRUNCATE order_line - SUCCESS
+2025-02-19 23:57:06,955 - INFO - TRUNCATE order_status - SUCCESS
+2025-02-19 23:57:06,965 - INFO - TRUNCATE publisher - SUCCESS
+2025-02-19 23:57:06,976 - INFO - TRUNCATE shipping_method - SUCCESS
+2025-02-19 23:57:06,977 - INFO - TRUNCATE ALL TABLES - DONE
+2025-02-19 23:57:06,977 - INFO - ==================================END TRUNCATE=======================================
+2025-02-19 23:57:06,977 - INFO - ==================================STARTING LOAD DATA=================================
+2025-02-19 23:57:06,985 - ERROR - LOAD ALL DATA - FAILED: 'Load' object has no attribute 'tables'
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 84, in run
+    for index,  table in enumerate(self.tables):
+AttributeError: 'Load' object has no attribute 'tables'
+
+2025-02-19 23:57:06,985 - ERROR - [pid 10364] Worker Worker(salt=3862728406, workers=1, host=KyrieEl, username=kyrie, pid=10364) failed    Load()
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 84, in run
+    for index,  table in enumerate(self.tables):
+AttributeError: 'Load' object has no attribute 'tables'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 210, in run
+    new_deps = self._run_get_new_deps()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 138, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 119, in run
+    "timestamp": [datetime.datetime.now()],
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+2025-02-19 23:57:07,013 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-02-19 23:57:07,027 - INFO - Informed scheduler that task   Load__99914b932b   has status   FAILED
+2025-02-19 23:57:07,028 - DEBUG - Asking scheduler for work...
+2025-02-19 23:57:07,032 - DEBUG - Done
+2025-02-19 23:57:07,033 - DEBUG - There are no more tasks to run at this time
+2025-02-19 23:57:07,033 - DEBUG - There are 1 pending tasks possibly being run by other workers
+2025-02-19 23:57:07,034 - DEBUG - There are 1 pending tasks unique to this worker
+2025-02-19 23:57:07,034 - DEBUG - There are 1 pending tasks last scheduled by this worker
+2025-02-19 23:57:07,035 - INFO - Worker Worker(salt=3862728406, workers=1, host=KyrieEl, username=kyrie, pid=10364) was stopped. Shutting down Keep-Alive thread
+2025-02-19 23:57:07,039 - INFO - 
+===== Luigi Execution Summary =====
+
+Scheduled 2 tasks of which:
+* 1 ran successfully:
+    - 1 Extract()
+* 1 failed:
+    - 1 Load()
+
+This progress looks :( because there were failed tasks
+
+===== Luigi Execution Summary =====
+
+2025-02-19 23:58:08,887 - INFO - ==================================STARTING TRUNCATE=======================================
+2025-02-19 23:58:09,652 - INFO - TRUNCATE address - SUCCESS
+2025-02-19 23:58:09,658 - INFO - TRUNCATE address_status - SUCCESS
+2025-02-19 23:58:09,665 - INFO - TRUNCATE author - SUCCESS
+2025-02-19 23:58:09,671 - INFO - TRUNCATE book_author - SUCCESS
+2025-02-19 23:58:09,678 - INFO - TRUNCATE book_language - SUCCESS
+2025-02-19 23:58:09,685 - INFO - TRUNCATE book - SUCCESS
+2025-02-19 23:58:09,692 - INFO - TRUNCATE country - SUCCESS
+2025-02-19 23:58:09,698 - INFO - TRUNCATE cust_order - SUCCESS
+2025-02-19 23:58:09,705 - INFO - TRUNCATE customer_address - SUCCESS
+2025-02-19 23:58:09,717 - INFO - TRUNCATE customer - SUCCESS
+2025-02-19 23:58:09,723 - INFO - TRUNCATE order_history - SUCCESS
+2025-02-19 23:58:09,730 - INFO - TRUNCATE order_line - SUCCESS
+2025-02-19 23:58:09,738 - INFO - TRUNCATE order_status - SUCCESS
+2025-02-19 23:58:09,747 - INFO - TRUNCATE publisher - SUCCESS
+2025-02-19 23:58:09,755 - INFO - TRUNCATE shipping_method - SUCCESS
+2025-02-19 23:58:09,756 - INFO - TRUNCATE ALL TABLES - DONE
+2025-02-19 23:58:09,757 - INFO - ==================================END TRUNCATE=======================================
+2025-02-19 23:58:09,757 - INFO - ==================================STARTING LOAD DATA=================================
+2025-02-19 23:58:09,800 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,808 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,816 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,825 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,832 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,841 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,848 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,857 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,866 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,874 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,881 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,891 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,898 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,905 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,911 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-19 23:58:09,912 - INFO - READ EXTRACTED TABLES - SUCCESS
+2025-02-19 23:58:10,413 - ERROR - LOAD ALL DATA - FAILED: (psycopg2.errors.UndefinedColumn) column "method_id" of relation "address" does not exist
+LINE 1: INSERT INTO public.address (method_id, method_name, cost) VA...
+                                    ^
+
+[SQL: INSERT INTO public.address (method_id, method_name, cost) VALUES (%(method_id__0)s, %(method_name__0)s, %(cost__0)s), (%(method_id__1)s, %(method_name__1)s, %(cost__1)s), (%(method_id__2)s, %(method_name__2)s, %(cost__2)s), (%(method_id__3)s, %(method_name__3)s, %(cost__3)s)]
+[parameters: {'method_name__0': 'Standard', 'cost__0': 5.9, 'method_id__0': 1, 'method_name__1': 'Priority', 'cost__1': 8.9, 'method_id__1': 2, 'method_name__2': 'Express', 'cost__2': 11.9, 'method_id__2': 3, 'method_name__3': 'International', 'cost__3': 24.5, 'method_id__3': 4}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "method_id" of relation "address" does not exist
+LINE 1: INSERT INTO public.address (method_id, method_name, cost) VA...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 93, in run
+    df.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/core/generic.py", line 3084, in to_sql
+    return sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1567, in insert_records
+    raise err
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1847, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "method_id" of relation "address" does not exist
+LINE 1: INSERT INTO public.address (method_id, method_name, cost) VA...
+                                    ^
+
+[SQL: INSERT INTO public.address (method_id, method_name, cost) VALUES (%(method_id__0)s, %(method_name__0)s, %(cost__0)s), (%(method_id__1)s, %(method_name__1)s, %(cost__1)s), (%(method_id__2)s, %(method_name__2)s, %(cost__2)s), (%(method_id__3)s, %(method_name__3)s, %(cost__3)s)]
+[parameters: {'method_name__0': 'Standard', 'cost__0': 5.9, 'method_id__0': 1, 'method_name__1': 'Priority', 'cost__1': 8.9, 'method_id__1': 2, 'method_name__2': 'Express', 'cost__2': 11.9, 'method_id__2': 3, 'method_name__3': 'International', 'cost__3': 24.5, 'method_id__3': 4}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-02-19 23:58:10,414 - ERROR - [pid 10663] Worker Worker(salt=3023923259, workers=1, host=KyrieEl, username=kyrie, pid=10663) failed    Load()
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "method_id" of relation "address" does not exist
+LINE 1: INSERT INTO public.address (method_id, method_name, cost) VA...
+                                    ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 93, in run
+    df.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/core/generic.py", line 3084, in to_sql
+    return sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1567, in insert_records
+    raise err
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1847, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "method_id" of relation "address" does not exist
+LINE 1: INSERT INTO public.address (method_id, method_name, cost) VA...
+                                    ^
+
+[SQL: INSERT INTO public.address (method_id, method_name, cost) VALUES (%(method_id__0)s, %(method_name__0)s, %(cost__0)s), (%(method_id__1)s, %(method_name__1)s, %(cost__1)s), (%(method_id__2)s, %(method_name__2)s, %(cost__2)s), (%(method_id__3)s, %(method_name__3)s, %(cost__3)s)]
+[parameters: {'method_name__0': 'Standard', 'cost__0': 5.9, 'method_id__0': 1, 'method_name__1': 'Priority', 'cost__1': 8.9, 'method_id__1': 2, 'method_name__2': 'Express', 'cost__2': 11.9, 'method_id__2': 3, 'method_name__3': 'International', 'cost__3': 24.5, 'method_id__3': 4}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 210, in run
+    new_deps = self._run_get_new_deps()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 138, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 125, in run
+    summary.to_csv(self.output().path, index=False, mode="a")
+AttributeError: 'list' object has no attribute 'path'
+2025-02-19 23:58:10,453 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-02-19 23:58:10,465 - INFO - Informed scheduler that task   Load__99914b932b   has status   FAILED
+2025-02-19 23:58:10,465 - DEBUG - Asking scheduler for work...
+2025-02-19 23:58:10,469 - DEBUG - Done
+2025-02-19 23:58:10,470 - DEBUG - There are no more tasks to run at this time
+2025-02-19 23:58:10,470 - DEBUG - There are 1 pending tasks possibly being run by other workers
+2025-02-19 23:58:10,471 - DEBUG - There are 1 pending tasks last scheduled by this worker
+2025-02-19 23:58:10,471 - INFO - Worker Worker(salt=3023923259, workers=1, host=KyrieEl, username=kyrie, pid=10663) was stopped. Shutting down Keep-Alive thread
+2025-02-19 23:58:10,472 - INFO - 
+===== Luigi Execution Summary =====
+
+Scheduled 2 tasks of which:
+* 1 complete ones were encountered:
+    - 1 Extract()
+* 1 failed:
+    - 1 Load()
+
+This progress looks :( because there were failed tasks
+
+===== Luigi Execution Summary =====
+
+2025-02-20 00:01:17,473 - INFO - ==================================STARTING TRUNCATE=======================================
+2025-02-20 00:01:18,295 - INFO - TRUNCATE address - SUCCESS
+2025-02-20 00:01:18,302 - INFO - TRUNCATE address_status - SUCCESS
+2025-02-20 00:01:18,309 - INFO - TRUNCATE author - SUCCESS
+2025-02-20 00:01:18,316 - INFO - TRUNCATE book_author - SUCCESS
+2025-02-20 00:01:18,322 - INFO - TRUNCATE book_language - SUCCESS
+2025-02-20 00:01:18,329 - INFO - TRUNCATE book - SUCCESS
+2025-02-20 00:01:18,336 - INFO - TRUNCATE country - SUCCESS
+2025-02-20 00:01:18,344 - INFO - TRUNCATE cust_order - SUCCESS
+2025-02-20 00:01:18,352 - INFO - TRUNCATE customer_address - SUCCESS
+2025-02-20 00:01:18,366 - INFO - TRUNCATE customer - SUCCESS
+2025-02-20 00:01:18,375 - INFO - TRUNCATE order_history - SUCCESS
+2025-02-20 00:01:18,385 - INFO - TRUNCATE order_line - SUCCESS
+2025-02-20 00:01:18,395 - INFO - TRUNCATE order_status - SUCCESS
+2025-02-20 00:01:18,405 - INFO - TRUNCATE publisher - SUCCESS
+2025-02-20 00:01:18,414 - INFO - TRUNCATE shipping_method - SUCCESS
+2025-02-20 00:01:18,415 - INFO - TRUNCATE ALL TABLES - DONE
+2025-02-20 00:01:18,415 - INFO - ==================================END TRUNCATE=======================================
+2025-02-20 00:01:18,416 - INFO - ==================================STARTING LOAD DATA=================================
+2025-02-20 00:01:18,501 - INFO - READ 'address' - SUCCESS
+2025-02-20 00:01:18,509 - INFO - READ 'address_status' - SUCCESS
+2025-02-20 00:01:18,529 - INFO - READ 'author' - SUCCESS
+2025-02-20 00:01:18,546 - INFO - READ 'book_author' - SUCCESS
+2025-02-20 00:01:18,553 - INFO - READ 'book_language' - SUCCESS
+2025-02-20 00:01:18,597 - INFO - READ 'book' - SUCCESS
+2025-02-20 00:01:18,604 - INFO - READ 'country' - SUCCESS
+2025-02-20 00:01:18,622 - INFO - READ 'cust_order' - SUCCESS
+2025-02-20 00:01:18,631 - INFO - READ 'customer_address' - SUCCESS
+2025-02-20 00:01:18,641 - INFO - READ 'customer' - SUCCESS
+2025-02-20 00:01:18,677 - INFO - READ 'order_history' - SUCCESS
+2025-02-20 00:01:18,693 - INFO - READ 'order_line' - SUCCESS
+2025-02-20 00:01:18,701 - INFO - READ 'order_status' - SUCCESS
+2025-02-20 00:01:18,718 - INFO - READ 'publisher' - SUCCESS
+2025-02-20 00:01:18,727 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-20 00:01:18,727 - INFO - READ EXTRACTED TABLES - SUCCESS
+2025-02-20 00:01:19,017 - ERROR - LOAD ALL DATA - FAILED: (psycopg2.errors.UndefinedColumn) column "country_id" of relation "address" does not exist
+LINE 1: ...ss (address_id, street_number, street_name, city, country_id...
+                                                             ^
+
+[SQL: INSERT INTO public.address (address_id, street_number, street_name, city, country_id) VALUES (%(address_id__0)s, %(street_number__0)s, %(street_name__0)s, %(city__0)s, %(country_id__0)s), (%(address_id__1)s, %(street_number__1)s, %(street_name__1)s,  ... 104191 characters truncated ... address_id__999)s, %(street_number__999)s, %(street_name__999)s, %(city__999)s, %(country_id__999)s)]
+[parameters: {'city__0': 'Torbat-e Jām', 'street_number__0': 57, 'address_id__0': 1, 'street_name__0': 'Glacier Hill Avenue', 'country_id__0': 95, 'city__1': 'Beaumont', 'street_number__1': 86, 'address_id__1': 2, 'street_name__1': 'Dottie Junction', 'country_id__1': 37, 'city__2': 'Cayambe', 'street_number__2': 292, 'address_id__2': 3, 'street_name__2': 'Ramsey Avenue', 'country_id__2': 60, 'city__3': 'Caldas', 'street_number__3': 5618, 'address_id__3': 4, 'street_name__3': 'Thackeray Junction', 'country_id__3': 47, 'city__4': 'Ngunguru', 'street_number__4': 4, 'address_id__4': 5, 'street_name__4': '2nd Park', 'country_id__4': 153, 'city__5': 'Burirao', 'street_number__5': 387, 'address_id__5': 6, 'street_name__5': 'Nancy Junction', 'country_id__5': 159, 'city__6': 'Nirji', 'street_number__6': 501, 'address_id__6': 7, 'street_name__6': 'Atwood Point', 'country_id__6': 42, 'city__7': 'Tijão', 'street_number__7': 42, 'address_id__7': 8, 'street_name__7': 'North Pass', 'country_id__7': 164, 'city__8': 'Castelo de Vide', 'street_number__8': 83, 'address_id__8': 9, 'street_name__8': 'Graceland Pass', 'country_id__8': 164, 'city__9': 'Shangde', 'street_number__9': 93, 'address_id__9': 10, 'street_name__9': 'Clyde Gallagher Road', 'country_id__9': 42 ... 4900 parameters truncated ... 'city__990': 'Parikkala', 'street_number__990': 510, 'address_id__990': 991, 'street_name__990': 'Heath Street', 'country_id__990': 69, 'city__991': 'Ongkharak', 'street_number__991': 71, 'address_id__991': 992, 'street_name__991': 'Sheridan Park', 'country_id__991': 200, 'city__992': 'Paris 08', 'street_number__992': 5329, 'address_id__992': 993, 'street_name__992': 'Carpenter Street', 'country_id__992': 70, 'city__993': 'Vellinge', 'street_number__993': 61170, 'address_id__993': 994, 'street_name__993': 'Arkansas Hill', 'country_id__993': 194, 'city__994': 'Santa Rosa', 'street_number__994': 70837, 'address_id__994': 995, 'street_name__994': 'Lindbergh Drive', 'country_id__994': 158, 'city__995': 'Mmaaf', 'street_number__995': 5, 'address_id__995': 996, 'street_name__995': 'Leroy Alley', 'country_id__995': 92, 'city__996': 'Jobabo', 'street_number__996': 24, 'address_id__996': 997, 'street_name__996': 'Morningstar Junction', 'country_id__996': 53, 'city__997': 'Changxingbao', 'street_number__997': 429, 'address_id__997': 998, 'street_name__997': 'Autumn Leaf Parkway', 'country_id__997': 42, 'city__998': 'Pasararba', 'street_number__998': 2, 'address_id__998': 999, 'street_name__998': 'Moose Crossing', 'country_id__998': 92, 'city__999': 'Jiangfeng', 'street_number__999': 503, 'address_id__999': 1000, 'street_name__999': 'Canary Crossing', 'country_id__999': 42}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "country_id" of relation "address" does not exist
+LINE 1: ...ss (address_id, street_number, street_name, city, country_id...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 93, in run
+    df.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/core/generic.py", line 3084, in to_sql
+    return sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1567, in insert_records
+    raise err
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1847, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "country_id" of relation "address" does not exist
+LINE 1: ...ss (address_id, street_number, street_name, city, country_id...
+                                                             ^
+
+[SQL: INSERT INTO public.address (address_id, street_number, street_name, city, country_id) VALUES (%(address_id__0)s, %(street_number__0)s, %(street_name__0)s, %(city__0)s, %(country_id__0)s), (%(address_id__1)s, %(street_number__1)s, %(street_name__1)s,  ... 104191 characters truncated ... address_id__999)s, %(street_number__999)s, %(street_name__999)s, %(city__999)s, %(country_id__999)s)]
+[parameters: {'city__0': 'Torbat-e Jām', 'street_number__0': 57, 'address_id__0': 1, 'street_name__0': 'Glacier Hill Avenue', 'country_id__0': 95, 'city__1': 'Beaumont', 'street_number__1': 86, 'address_id__1': 2, 'street_name__1': 'Dottie Junction', 'country_id__1': 37, 'city__2': 'Cayambe', 'street_number__2': 292, 'address_id__2': 3, 'street_name__2': 'Ramsey Avenue', 'country_id__2': 60, 'city__3': 'Caldas', 'street_number__3': 5618, 'address_id__3': 4, 'street_name__3': 'Thackeray Junction', 'country_id__3': 47, 'city__4': 'Ngunguru', 'street_number__4': 4, 'address_id__4': 5, 'street_name__4': '2nd Park', 'country_id__4': 153, 'city__5': 'Burirao', 'street_number__5': 387, 'address_id__5': 6, 'street_name__5': 'Nancy Junction', 'country_id__5': 159, 'city__6': 'Nirji', 'street_number__6': 501, 'address_id__6': 7, 'street_name__6': 'Atwood Point', 'country_id__6': 42, 'city__7': 'Tijão', 'street_number__7': 42, 'address_id__7': 8, 'street_name__7': 'North Pass', 'country_id__7': 164, 'city__8': 'Castelo de Vide', 'street_number__8': 83, 'address_id__8': 9, 'street_name__8': 'Graceland Pass', 'country_id__8': 164, 'city__9': 'Shangde', 'street_number__9': 93, 'address_id__9': 10, 'street_name__9': 'Clyde Gallagher Road', 'country_id__9': 42 ... 4900 parameters truncated ... 'city__990': 'Parikkala', 'street_number__990': 510, 'address_id__990': 991, 'street_name__990': 'Heath Street', 'country_id__990': 69, 'city__991': 'Ongkharak', 'street_number__991': 71, 'address_id__991': 992, 'street_name__991': 'Sheridan Park', 'country_id__991': 200, 'city__992': 'Paris 08', 'street_number__992': 5329, 'address_id__992': 993, 'street_name__992': 'Carpenter Street', 'country_id__992': 70, 'city__993': 'Vellinge', 'street_number__993': 61170, 'address_id__993': 994, 'street_name__993': 'Arkansas Hill', 'country_id__993': 194, 'city__994': 'Santa Rosa', 'street_number__994': 70837, 'address_id__994': 995, 'street_name__994': 'Lindbergh Drive', 'country_id__994': 158, 'city__995': 'Mmaaf', 'street_number__995': 5, 'address_id__995': 996, 'street_name__995': 'Leroy Alley', 'country_id__995': 92, 'city__996': 'Jobabo', 'street_number__996': 24, 'address_id__996': 997, 'street_name__996': 'Morningstar Junction', 'country_id__996': 53, 'city__997': 'Changxingbao', 'street_number__997': 429, 'address_id__997': 998, 'street_name__997': 'Autumn Leaf Parkway', 'country_id__997': 42, 'city__998': 'Pasararba', 'street_number__998': 2, 'address_id__998': 999, 'street_name__998': 'Moose Crossing', 'country_id__998': 92, 'city__999': 'Jiangfeng', 'street_number__999': 503, 'address_id__999': 1000, 'street_name__999': 'Canary Crossing', 'country_id__999': 42}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+2025-02-20 00:01:19,020 - ERROR - [pid 11578] Worker Worker(salt=4402390861, workers=1, host=KyrieEl, username=kyrie, pid=11578) failed    Load()
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "country_id" of relation "address" does not exist
+LINE 1: ...ss (address_id, street_number, street_name, city, country_id...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 93, in run
+    df.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/core/generic.py", line 3084, in to_sql
+    return sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2018, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1567, in insert_records
+    raise err
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1558, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1119, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1010, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1847, in _execute_context
+    return self._exec_insertmany_context(dialect, context)
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2127, in _exec_insertmany_context
+    self._handle_dbapi_exception(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2119, in _exec_insertmany_context
+    dialect.do_execute(
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "country_id" of relation "address" does not exist
+LINE 1: ...ss (address_id, street_number, street_name, city, country_id...
+                                                             ^
+
+[SQL: INSERT INTO public.address (address_id, street_number, street_name, city, country_id) VALUES (%(address_id__0)s, %(street_number__0)s, %(street_name__0)s, %(city__0)s, %(country_id__0)s), (%(address_id__1)s, %(street_number__1)s, %(street_name__1)s,  ... 104191 characters truncated ... address_id__999)s, %(street_number__999)s, %(street_name__999)s, %(city__999)s, %(country_id__999)s)]
+[parameters: {'city__0': 'Torbat-e Jām', 'street_number__0': 57, 'address_id__0': 1, 'street_name__0': 'Glacier Hill Avenue', 'country_id__0': 95, 'city__1': 'Beaumont', 'street_number__1': 86, 'address_id__1': 2, 'street_name__1': 'Dottie Junction', 'country_id__1': 37, 'city__2': 'Cayambe', 'street_number__2': 292, 'address_id__2': 3, 'street_name__2': 'Ramsey Avenue', 'country_id__2': 60, 'city__3': 'Caldas', 'street_number__3': 5618, 'address_id__3': 4, 'street_name__3': 'Thackeray Junction', 'country_id__3': 47, 'city__4': 'Ngunguru', 'street_number__4': 4, 'address_id__4': 5, 'street_name__4': '2nd Park', 'country_id__4': 153, 'city__5': 'Burirao', 'street_number__5': 387, 'address_id__5': 6, 'street_name__5': 'Nancy Junction', 'country_id__5': 159, 'city__6': 'Nirji', 'street_number__6': 501, 'address_id__6': 7, 'street_name__6': 'Atwood Point', 'country_id__6': 42, 'city__7': 'Tijão', 'street_number__7': 42, 'address_id__7': 8, 'street_name__7': 'North Pass', 'country_id__7': 164, 'city__8': 'Castelo de Vide', 'street_number__8': 83, 'address_id__8': 9, 'street_name__8': 'Graceland Pass', 'country_id__8': 164, 'city__9': 'Shangde', 'street_number__9': 93, 'address_id__9': 10, 'street_name__9': 'Clyde Gallagher Road', 'country_id__9': 42 ... 4900 parameters truncated ... 'city__990': 'Parikkala', 'street_number__990': 510, 'address_id__990': 991, 'street_name__990': 'Heath Street', 'country_id__990': 69, 'city__991': 'Ongkharak', 'street_number__991': 71, 'address_id__991': 992, 'street_name__991': 'Sheridan Park', 'country_id__991': 200, 'city__992': 'Paris 08', 'street_number__992': 5329, 'address_id__992': 993, 'street_name__992': 'Carpenter Street', 'country_id__992': 70, 'city__993': 'Vellinge', 'street_number__993': 61170, 'address_id__993': 994, 'street_name__993': 'Arkansas Hill', 'country_id__993': 194, 'city__994': 'Santa Rosa', 'street_number__994': 70837, 'address_id__994': 995, 'street_name__994': 'Lindbergh Drive', 'country_id__994': 158, 'city__995': 'Mmaaf', 'street_number__995': 5, 'address_id__995': 996, 'street_name__995': 'Leroy Alley', 'country_id__995': 92, 'city__996': 'Jobabo', 'street_number__996': 24, 'address_id__996': 997, 'street_name__996': 'Morningstar Junction', 'country_id__996': 53, 'city__997': 'Changxingbao', 'street_number__997': 429, 'address_id__997': 998, 'street_name__997': 'Autumn Leaf Parkway', 'country_id__997': 42, 'city__998': 'Pasararba', 'street_number__998': 2, 'address_id__998': 999, 'street_name__998': 'Moose Crossing', 'country_id__998': 92, 'city__999': 'Jiangfeng', 'street_number__999': 503, 'address_id__999': 1000, 'street_name__999': 'Canary Crossing', 'country_id__999': 42}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 210, in run
+    new_deps = self._run_get_new_deps()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 138, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 125, in run
+    summary.to_csv(self.output().path, index=False, mode="a")
+AttributeError: 'list' object has no attribute 'path'
+2025-02-20 00:01:19,098 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-02-20 00:01:19,117 - INFO - Informed scheduler that task   Load__99914b932b   has status   FAILED
+2025-02-20 00:01:19,120 - DEBUG - Asking scheduler for work...
+2025-02-20 00:01:19,125 - DEBUG - Done
+2025-02-20 00:01:19,126 - DEBUG - There are no more tasks to run at this time
+2025-02-20 00:01:19,126 - DEBUG - There are 1 pending tasks possibly being run by other workers
+2025-02-20 00:01:19,127 - DEBUG - There are 1 pending tasks unique to this worker
+2025-02-20 00:01:19,128 - DEBUG - There are 1 pending tasks last scheduled by this worker
+2025-02-20 00:01:19,129 - INFO - Worker Worker(salt=4402390861, workers=1, host=KyrieEl, username=kyrie, pid=11578) was stopped. Shutting down Keep-Alive thread
+2025-02-20 00:01:19,131 - INFO - 
+===== Luigi Execution Summary =====
+
+Scheduled 2 tasks of which:
+* 1 complete ones were encountered:
+    - 1 Extract()
+* 1 failed:
+    - 1 Load()
+
+This progress looks :( because there were failed tasks
+
+===== Luigi Execution Summary =====
+
+2025-02-20 00:18:18,537 - INFO - ==================================STARTING TRUNCATE=======================================
+2025-02-20 00:18:19,607 - INFO - TRUNCATE address - SUCCESS
+2025-02-20 00:18:19,619 - INFO - TRUNCATE address_status - SUCCESS
+2025-02-20 00:18:19,627 - INFO - TRUNCATE author - SUCCESS
+2025-02-20 00:18:19,635 - INFO - TRUNCATE book_author - SUCCESS
+2025-02-20 00:18:19,643 - INFO - TRUNCATE book_language - SUCCESS
+2025-02-20 00:18:19,651 - INFO - TRUNCATE book - SUCCESS
+2025-02-20 00:18:19,661 - INFO - TRUNCATE country - SUCCESS
+2025-02-20 00:18:19,670 - INFO - TRUNCATE cust_order - SUCCESS
+2025-02-20 00:18:19,681 - INFO - TRUNCATE customer_address - SUCCESS
+2025-02-20 00:18:19,702 - INFO - TRUNCATE customer - SUCCESS
+2025-02-20 00:18:19,714 - INFO - TRUNCATE order_history - SUCCESS
+2025-02-20 00:18:19,725 - INFO - TRUNCATE order_line - SUCCESS
+2025-02-20 00:18:19,735 - INFO - TRUNCATE order_status - SUCCESS
+2025-02-20 00:18:19,746 - INFO - TRUNCATE publisher - SUCCESS
+2025-02-20 00:18:19,759 - INFO - TRUNCATE shipping_method - SUCCESS
+2025-02-20 00:18:19,760 - INFO - TRUNCATE ALL TABLES - DONE
+2025-02-20 00:18:19,761 - INFO - ==================================END TRUNCATE=======================================
+2025-02-20 00:18:19,761 - INFO - ==================================STARTING LOAD DATA=================================
+2025-02-20 00:18:20,064 - INFO - READ 'address' - SUCCESS
+2025-02-20 00:18:20,098 - INFO - READ 'address_status' - SUCCESS
+2025-02-20 00:18:20,120 - INFO - READ 'author' - SUCCESS
+2025-02-20 00:18:20,137 - INFO - READ 'book_author' - SUCCESS
+2025-02-20 00:18:20,153 - INFO - READ 'book_language' - SUCCESS
+2025-02-20 00:18:20,200 - INFO - READ 'book' - SUCCESS
+2025-02-20 00:18:20,219 - INFO - READ 'country' - SUCCESS
+2025-02-20 00:18:20,249 - INFO - READ 'cust_order' - SUCCESS
+2025-02-20 00:18:20,264 - INFO - READ 'customer_address' - SUCCESS
+2025-02-20 00:18:20,282 - INFO - READ 'customer' - SUCCESS
+2025-02-20 00:18:20,320 - INFO - READ 'order_history' - SUCCESS
+2025-02-20 00:18:20,341 - INFO - READ 'order_line' - SUCCESS
+2025-02-20 00:18:20,352 - INFO - READ 'order_status' - SUCCESS
+2025-02-20 00:18:20,364 - INFO - READ 'publisher' - SUCCESS
+2025-02-20 00:18:20,376 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-20 00:18:20,378 - INFO - READ EXTRACTED TABLES - SUCCESS
+2025-02-20 00:18:20,446 - INFO - LOAD 'address' - SUCCESS
+2025-02-20 00:18:20,457 - INFO - LOAD 'address_status' - SUCCESS
+2025-02-20 00:18:20,649 - INFO - LOAD 'author' - SUCCESS
+2025-02-20 00:18:20,870 - INFO - LOAD 'book_author' - SUCCESS
+2025-02-20 00:18:20,882 - INFO - LOAD 'book_language' - SUCCESS
+2025-02-20 00:18:21,390 - INFO - LOAD 'book' - SUCCESS
+2025-02-20 00:18:21,404 - INFO - LOAD 'country' - SUCCESS
+2025-02-20 00:18:21,583 - INFO - LOAD 'cust_order' - SUCCESS
+2025-02-20 00:18:21,647 - INFO - LOAD 'customer_address' - SUCCESS
+2025-02-20 00:18:21,700 - INFO - LOAD 'customer' - SUCCESS
+2025-02-20 00:18:22,190 - INFO - LOAD 'order_history' - SUCCESS
+2025-02-20 00:18:22,555 - INFO - LOAD 'order_line' - SUCCESS
+2025-02-20 00:18:22,563 - INFO - LOAD 'order_status' - SUCCESS
+2025-02-20 00:18:22,606 - INFO - LOAD 'publisher' - SUCCESS
+2025-02-20 00:18:22,618 - INFO - LOAD 'shipping_method' - SUCCESS
+2025-02-20 00:18:22,619 - INFO - LOAD ALL DATA - SUCCESS
+2025-02-20 00:18:22,632 - ERROR - LOAD ALL DATA - FAILED: 'list' object has no attribute 'path'
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 113, in run
+    summary.to_csv(self.output().path, index=False, mode="a")
+AttributeError: 'list' object has no attribute 'path'
+
+2025-02-20 00:18:22,633 - ERROR - [pid 15620] Worker Worker(salt=879125372, workers=1, host=KyrieEl, username=kyrie, pid=15620) failed    Load()
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 113, in run
+    summary.to_csv(self.output().path, index=False, mode="a")
+AttributeError: 'list' object has no attribute 'path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 210, in run
+    new_deps = self._run_get_new_deps()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/luigi/worker.py", line 138, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/source_to_staging/pipeline/load.py", line 125, in run
+    summary.to_csv(self.output().path, index=False, mode="a")
+AttributeError: 'list' object has no attribute 'path'
+2025-02-20 00:18:22,657 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-02-20 00:18:22,665 - INFO - Informed scheduler that task   Load__99914b932b   has status   FAILED
+2025-02-20 00:18:22,665 - DEBUG - Asking scheduler for work...
+2025-02-20 00:18:22,670 - DEBUG - Done
+2025-02-20 00:18:22,671 - DEBUG - There are no more tasks to run at this time
+2025-02-20 00:18:22,672 - DEBUG - There are 1 pending tasks possibly being run by other workers
+2025-02-20 00:18:22,672 - DEBUG - There are 1 pending tasks unique to this worker
+2025-02-20 00:18:22,673 - DEBUG - There are 1 pending tasks last scheduled by this worker
+2025-02-20 00:18:22,673 - INFO - Worker Worker(salt=879125372, workers=1, host=KyrieEl, username=kyrie, pid=15620) was stopped. Shutting down Keep-Alive thread
+2025-02-20 00:18:22,675 - INFO - 
+===== Luigi Execution Summary =====
+
+Scheduled 2 tasks of which:
+* 1 complete ones were encountered:
+    - 1 Extract()
+* 1 failed:
+    - 1 Load()
+
+This progress looks :( because there were failed tasks
+
+===== Luigi Execution Summary =====
+
+2025-02-20 00:20:16,328 - INFO - ==================================STARTING TRUNCATE=======================================
+2025-02-20 00:20:17,088 - INFO - TRUNCATE address - SUCCESS
+2025-02-20 00:20:17,096 - INFO - TRUNCATE address_status - SUCCESS
+2025-02-20 00:20:17,114 - INFO - TRUNCATE author - SUCCESS
+2025-02-20 00:20:17,123 - INFO - TRUNCATE book_author - SUCCESS
+2025-02-20 00:20:17,131 - INFO - TRUNCATE book_language - SUCCESS
+2025-02-20 00:20:17,139 - INFO - TRUNCATE book - SUCCESS
+2025-02-20 00:20:17,147 - INFO - TRUNCATE country - SUCCESS
+2025-02-20 00:20:17,155 - INFO - TRUNCATE cust_order - SUCCESS
+2025-02-20 00:20:17,162 - INFO - TRUNCATE customer_address - SUCCESS
+2025-02-20 00:20:17,176 - INFO - TRUNCATE customer - SUCCESS
+2025-02-20 00:20:17,184 - INFO - TRUNCATE order_history - SUCCESS
+2025-02-20 00:20:17,192 - INFO - TRUNCATE order_line - SUCCESS
+2025-02-20 00:20:17,199 - INFO - TRUNCATE order_status - SUCCESS
+2025-02-20 00:20:17,207 - INFO - TRUNCATE publisher - SUCCESS
+2025-02-20 00:20:17,215 - INFO - TRUNCATE shipping_method - SUCCESS
+2025-02-20 00:20:17,215 - INFO - TRUNCATE ALL TABLES - DONE
+2025-02-20 00:20:17,216 - INFO - ==================================END TRUNCATE=======================================
+2025-02-20 00:20:17,216 - INFO - ==================================STARTING LOAD DATA=================================
+2025-02-20 00:20:17,377 - INFO - READ 'address' - SUCCESS
+2025-02-20 00:20:17,395 - INFO - READ 'address_status' - SUCCESS
+2025-02-20 00:20:17,415 - INFO - READ 'author' - SUCCESS
+2025-02-20 00:20:17,432 - INFO - READ 'book_author' - SUCCESS
+2025-02-20 00:20:17,447 - INFO - READ 'book_language' - SUCCESS
+2025-02-20 00:20:17,488 - INFO - READ 'book' - SUCCESS
+2025-02-20 00:20:17,503 - INFO - READ 'country' - SUCCESS
+2025-02-20 00:20:17,528 - INFO - READ 'cust_order' - SUCCESS
+2025-02-20 00:20:17,544 - INFO - READ 'customer_address' - SUCCESS
+2025-02-20 00:20:17,562 - INFO - READ 'customer' - SUCCESS
+2025-02-20 00:20:17,597 - INFO - READ 'order_history' - SUCCESS
+2025-02-20 00:20:17,615 - INFO - READ 'order_line' - SUCCESS
+2025-02-20 00:20:17,629 - INFO - READ 'order_status' - SUCCESS
+2025-02-20 00:20:17,641 - INFO - READ 'publisher' - SUCCESS
+2025-02-20 00:20:17,653 - INFO - READ 'shipping_method' - SUCCESS
+2025-02-20 00:20:17,655 - INFO - READ EXTRACTED TABLES - SUCCESS
+2025-02-20 00:20:17,697 - INFO - LOAD 'address' - SUCCESS
+2025-02-20 00:20:17,707 - INFO - LOAD 'address_status' - SUCCESS
+2025-02-20 00:20:17,853 - INFO - LOAD 'author' - SUCCESS
+2025-02-20 00:20:18,061 - INFO - LOAD 'book_author' - SUCCESS
+2025-02-20 00:20:18,071 - INFO - LOAD 'book_language' - SUCCESS
+2025-02-20 00:20:18,487 - INFO - LOAD 'book' - SUCCESS
+2025-02-20 00:20:18,500 - INFO - LOAD 'country' - SUCCESS
+2025-02-20 00:20:18,708 - INFO - LOAD 'cust_order' - SUCCESS
+2025-02-20 00:20:18,774 - INFO - LOAD 'customer_address' - SUCCESS
+2025-02-20 00:20:18,852 - INFO - LOAD 'customer' - SUCCESS
+2025-02-20 00:20:19,357 - INFO - LOAD 'order_history' - SUCCESS
+2025-02-20 00:20:19,646 - INFO - LOAD 'order_line' - SUCCESS
+2025-02-20 00:20:19,656 - INFO - LOAD 'order_status' - SUCCESS
+2025-02-20 00:20:19,697 - INFO - LOAD 'publisher' - SUCCESS
+2025-02-20 00:20:19,708 - INFO - LOAD 'shipping_method' - SUCCESS
+2025-02-20 00:20:19,708 - INFO - LOAD ALL DATA - SUCCESS
+2025-02-20 00:20:19,751 - INFO - ==================================ENDING LOAD DATA=======================================
+2025-02-20 00:20:19,753 - INFO - [pid 16122] Worker Worker(salt=5472779441, workers=1, host=KyrieEl, username=kyrie, pid=16122) done      Load()
+2025-02-20 00:20:19,754 - DEBUG - 1 running tasks, waiting for next task to finish
+2025-02-20 00:20:19,757 - INFO - Informed scheduler that task   Load__99914b932b   has status   DONE
+2025-02-20 00:20:19,758 - DEBUG - Asking scheduler for work...
+2025-02-20 00:20:19,761 - DEBUG - Done
+2025-02-20 00:20:19,762 - DEBUG - There are no more tasks to run at this time
+2025-02-20 00:20:19,763 - INFO - Worker Worker(salt=5472779441, workers=1, host=KyrieEl, username=kyrie, pid=16122) was stopped. Shutting down Keep-Alive thread
+2025-02-20 00:20:19,766 - INFO - 
+===== Luigi Execution Summary =====
+
+Scheduled 2 tasks of which:
+* 1 complete ones were encountered:
+    - 1 Extract()
+* 1 ran successfully:
+    - 1 Load()
+
+This progress looks :) because there were no failed tasks or missing dependencies
+
+===== Luigi Execution Summary =====
+
