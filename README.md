@@ -29,7 +29,7 @@ Fact Table:
 
 #### Data Warehouse Diagram 
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/design.png)
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image1.png)
 
 
 ## ETL Design
@@ -38,7 +38,7 @@ Pipeline akan mengikuti alur seperti pada gambar, yaitu:
 - Transform
 - Load
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/design.png)
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image2.png)
 
 
 ## ETL Scheduling 
@@ -68,20 +68,20 @@ echo "========== End of dbt with Luigi Orchestration Process =========="
 ### Scenario 1
 Initial Load
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/summary.png)
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image5.png)
 
 
 Table dim_book
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/table_product.png)
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image3.png)
 
 Table dim_customer
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/table_sales.png)
+![alt text](hhttps://github.com/KyrieCettyara/data-storage-project/blob/main/image/image4.png)
 
 Table fact_cust_order_daily
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/table_sales.png)
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image6.png)
 
 
 ### Scenario 2
@@ -93,7 +93,24 @@ Update Data
 ### Scenario 3
 Add New Data
 
-![alt text](https://github.com/KyrieCettyara/Intro-to-data-ETL/blob/main/image/before_testing1.png)
+Menambahkan data baru di source database
+
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image10.png)
+
+Data sebelumnya belum ada di source database
+
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image11.png)
+
+Data sebelumnya belum ada di schema data warehouse
+
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image11.png)
+
+
+Data muncul di schema data warehouse
+
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image14.png)
+
+
 
 
 
