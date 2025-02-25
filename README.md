@@ -77,7 +77,7 @@ Table dim_book
 
 Table dim_customer
 
-![alt text](hhttps://github.com/KyrieCettyara/data-storage-project/blob/main/image/image4.png)
+![alt text](https://github.com/KyrieCettyara/data-storage-project/blob/main/image/image4.png)
 
 Table fact_cust_order_daily
 
