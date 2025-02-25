@@ -28,3 +28,19 @@ Happy modeling!
 [0m00:22:45.038343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1988234b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f198695e140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f198720b880>]}
 [0m00:22:45.039766 [debug] [MainThread]: Flushing usage events
 [0m00:22:46.293797 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:24:54.499984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1f1ed0b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1f2d35ab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1f2d35a50>]}
+
+
+============================== 20:24:54.540995 | 3e974a81-c57b-407c-86ae-4110565a2941 ==============================
+[0m20:24:54.540995 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:24:54.545407 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/kyrie/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:24:54.552090 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/staging_to_dwh/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:24:54.565733 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.31908992, "process_in_blocks": "3664", "process_kernel_time": 9.441409, "process_mem_max_rss": "86456", "process_out_blocks": "0", "process_user_time": 4.910765}
+[0m20:24:54.568851 [debug] [MainThread]: Command `dbt run` failed at 20:24:54.568401 after 0.32 seconds
+[0m20:24:54.573097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1f1ed0b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1f2d36170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb1f2d35ab0>]}
+[0m20:24:54.576004 [debug] [MainThread]: Flushing usage events
+[0m20:24:56.015083 [debug] [MainThread]: An error was encountered while trying to flush usage events
