@@ -1,4 +1,0 @@
-timestamp,task,status,execution_time
-2025-02-19 23:57:06.651856,Extract,Success,1.9487483501434326
-timestamp,task,status,execution_time
-2025-02-20 00:20:19.709489,Load,Success,2.492772102355957

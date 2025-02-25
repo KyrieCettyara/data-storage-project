@@ -6,7 +6,7 @@ services:
     container_name: pacbook-store-data-staging
     restart: always
     environment:
-      POSTGRES_DB: pacbook_staging
+      POSTGRES_DB: pacbook_dwh
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mypassword
     ports:

@@ -1,0 +1,30 @@
+[0m00:21:59.079850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1988234b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f198720b7c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f198720b820>]}
+
+
+============================== 00:21:59.105898 | 08bf1899-ebf1-4575-82e9-f05398df916a ==============================
+[0m00:21:59.105898 [info ] [MainThread]: Running with dbt=1.9.2
+[0m00:21:59.108524 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/kyrie/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:22:04.906660 [debug] [MainThread]: Starter project path: /mnt/d/Kyrie/Pacmann/DataStorageManagement/Project/data-storage-project/.venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m00:22:05.296011 [info ] [MainThread]: 
+Your new dbt project "pacbook_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:22:05.297443 [info ] [MainThread]: Setting up your profile.
+[0m00:22:45.026865 [info ] [MainThread]: Profile pacbook_dbt written to /home/kyrie/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m00:22:45.033802 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 46.078476, "process_in_blocks": "14296", "process_kernel_time": 3.570719, "process_mem_max_rss": "91296", "process_out_blocks": "8", "process_user_time": 2.122027}
+[0m00:22:45.035716 [debug] [MainThread]: Command `dbt init` succeeded at 00:22:45.035353 after 46.08 seconds
+[0m00:22:45.038343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1988234b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f198695e140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f198720b880>]}
+[0m00:22:45.039766 [debug] [MainThread]: Flushing usage events
+[0m00:22:46.293797 [debug] [MainThread]: An error was encountered while trying to flush usage events
